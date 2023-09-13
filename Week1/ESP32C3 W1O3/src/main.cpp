@@ -24,7 +24,7 @@ Adafruit_NeoPixel pixels(NUMPIXELS, LED, NEO_GRB + NEO_KHZ800);
 
 // Set these to your desired credentials.
 const char *ssid = "ESP32C3 Dannick";
-const char *password = "Dannick";
+const char *password = "Dannick123";
 
 WiFiServer server(80);
 
@@ -88,11 +88,17 @@ void loop() {
 
         // Check to see if the client request was "GET /H" or "GET /L":
         if (currentLine.endsWith("GET /H")) {
-          digitalWrite(LED_BUILTIN, HIGH);               // GET /H turns the LED on
+          pixels.clear();               // GET /H turns the LED on
+          pixels.setPixelColor(0, pixels.Color(255, 0, 0));
+          Serial.println("Button High pressed");
+          pixels.show();
         }
         if (currentLine.endsWith("GET /L")) {
-          digitalWrite(LED_BUILTIN, LOW);                // GET /L turns the LED off
-        }
+          pixels.clear();               // GET /L turns the LED off
+          pixels.setPixelColor(0, pixels.Color(0, 255, 0));
+          Serial.println("Button Low pressed");      
+          pixels.show();           
+          }
       }
     }
     // close the connection:
