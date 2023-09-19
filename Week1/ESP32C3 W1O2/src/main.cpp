@@ -34,8 +34,8 @@ ported for sparkfun esp32
 #define NUMPIXELS   1
 Adafruit_NeoPixel pixels(NUMPIXELS, LED, NEO_GRB + NEO_KHZ800);
 
-const char* ssid     = "Hoorn Wifi";
-const char* password = "jExvKFmtkfXj";
+const char* ssid     = "xxxxxxxxxxx";
+const char* password = "xxxxxxxxxxx";
 
 WiFiServer server(80);
 
